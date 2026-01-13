@@ -1,0 +1,24 @@
+{
+  "name": "arya-teknik-backend",
+  "version": "1.0.0",
+  "description": "Backend API untuk Arya Fauzan Teknik Widia - Mock Version",
+  "main": "server-mock.js",
+  "scripts": {
+    "start": "node server-mock.js",
+    "dev": "nodemon server-mock.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["arya-teknik", "backend", "api", "crud", "mock"],
+  "author": "Arya Fauzan Teknik",
+  "license": "ISC"
+}

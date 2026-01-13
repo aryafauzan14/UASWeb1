@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arya Fauzan Teknik Widia | Solusi Teknik Profesional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #0f172a;
+      --primary-light: #1e293b;
+      --secondary: #3b82f6;
+      --accent: #f97316;
+      --accent-green: #10b981;
+      --accent-purple: #8b5cf6;
+      --light: #f8fafc;
+      --light-gray: #f1f5f9;
+      --gray: #64748b;
+      --dark: #0f172a;
+      --border: #e2e8f0;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      --radius: 6px;
+      --radius-lg: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { 
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: #ffffff;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== CUSTOM LOGO DESIGN ===== */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    /* Logo Image Styling */
+    .logo-img {
+      height: 48px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      transition: var(--transition);
+      border-radius: 8px;
+    }
+
+    .logo-fallback {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--secondary), #1d4ed8);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      font-size: 0.7rem;
+      padding: 0.25rem;
+      line-height: 1;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-main {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-sub {
+      font-size: 0.8rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    /* ===== IMPROVED HEADER & NAVIGATION ===== */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    /* Navigation Menu */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: auto;
+    }
+
+    .nav-link {
+      color: var(--dark);
+      text-decoration: none;
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: var(--radius);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      position: relative;
+      border: 1px solid transparent;
+    }
+
+    .nav-link:hover {
+      color: var(--secondary);
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    .nav-link.active {
+      color: var(--secondary);
+      background: rgba(59, 130, 246, 0.1);
+      border-color: rgba(59, 130, 246, 0.2);
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      min-width: 200px;
+      padding: 8px 0;
+      display: none;
+      z-index: 100;
+      border: 1px solid var(--border);
+      animation: fadeIn 0.2s ease;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-item {
+      display: flex;
+      padding: 10px 16px;
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 0.9rem;
+      gap: 10px;
+      transition: var(--transition);
+    }
+
+    .dropdown-item:hover {
+      background-color: rgba(59, 130, 246, 0.05);
+      color: var(--secondary);
+    }
+
+    /* CTA Button */
+    .cta-button {
+      background: linear-gradient(135deg, var(--secondary), #2563eb);
+      color: white;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+    }
+
+    /* Logout Button */
+    .logout-button {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: white;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .logout-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 8px;
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+
+    .mobile-menu-btn:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    /* ===== IMPROVED HERO SECTION ===== */
+    .hero {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      padding: 160px 0 100px;
+      margin-top: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+      clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .hero-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .hero-content h1 span {
+      color: var(--secondary);
+      background: linear-gradient(135deg, var(--secondary), #1d4ed8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 32px;
+      max-width: 500px;
+      line-height: 1.7;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .stat-item {
+      text-align: left;
+    }
+
+    .stat-number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--gray);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--secondary), #1d4ed8);
+      color: white;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--secondary);
+    }
+
+    /* Hero Image - Founder Profile */
+    .hero-image {
+      position: relative;
+    }
+
+    .image-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-card-content {
+      text-align: center;
+    }
+
+    .image-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .image-card p {
+      color: var(--gray);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    /* Founder Profile Container */
+    .founder-profile {
+      display: inline-block;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .founder-image {
+      width: 160px;
+      height: 160px;
+      background: linear-gradient(135deg, var(--secondary), #1d4ed8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      border: 4px solid white;
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .founder-image::before {
+      content: 'AF';
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: white;
+      opacity: 0.9;
+    }
+
+    .founder-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+      border-radius: 50%;
+    }
+
+    .founder-name {
+      font-size: 1.3rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+
+    .founder-title {
+      font-size: 1rem;
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .founder-qualification {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .founder-details {
+      text-align: left;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .detail-item i {
+      color: var(--secondary);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .detail-text {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--secondary);
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--secondary), #1d4ed8);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .service-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .service-list li {
+      padding: 8px 0;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+
+    .service-list li::before {
+      content: '✓';
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== FEATURES SECTION ===== */
+    .features {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--secondary), #1d4ed8);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta {
+      background: linear-gradient(135deg, var(--primary), #1e293b);
+      color: white;
+      border-radius: 24px;
+      padding: 80px 0;
+      margin: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,50 Q250,0 500,50 T1000,50 V100 H0 Z" fill="%23ffffff" opacity="0.05"/></svg>');
+      background-size: cover;
+    }
+
+    .cta-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .cta-description {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 32px;
+      line-height: 1.7;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 80px 0 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+
+    .footer-col h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .footer-col p, .footer-col a {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1024px) {
+      .hero-wrapper {
+        gap: 40px;
+      }
+      
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      
+      .section {
+        padding: 80px 0;
+      }
+      
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        display: none;
+        z-index: 999;
+        border-top: 1px solid var(--border);
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+      }
+      
+      .nav-menu.active {
+        display: flex;
+      }
+      
+      .nav-link {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--border);
+        margin-left: 20px;
+        display: none;
+      }
+      
+      .dropdown.active .dropdown-menu {
+        display: block;
+      }
+      
+      .hero {
+        padding: 140px 0 60px;
+      }
+      
+      .hero-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .hero::before {
+        display: none;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-stats {
+        flex-direction: column;
+        gap: 24px;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 20px;
+      }
+      
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .service-card,
+      .feature-card {
+        padding: 24px;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Login Overlay */
+    .login-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .login-box {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .login-logo {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .login-logo .logo-main {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .login-logo .logo-sub {
+      font-size: 1rem;
+      color: var(--gray);
+    }
+
+    .login-input {
+      width: 100%;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .login-input:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--secondary), #2563eb);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 10px;
+    }
+
+    .login-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+    }
+
+    .login-message {
+      margin-top: 20px;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* Dynamic login message styles */
+    .login-message-dynamic {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .login-message-dynamic.success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .login-message-dynamic.error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Login Overlay -->
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-box">
+      <div class="login-logo">
+        <div class="logo-main">ARYA FAUZAN TEKNIK</div>
+        <div class="logo-sub">Widia</div>
+      </div>
+      <input type="text" id="username" class="login-input" placeholder="Username" value="admin">
+      <input type="password" id="password" class="login-input" placeholder="Password" value="admin123">
+      <button id="loginButton" class="login-button">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+      <div class="login-message">
+        Gunakan: admin / admin123
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header id="mainHeader" style="display: none;">
+    <div class="container">
+      <div class="header-wrapper">
+        <!-- Logo dengan gambar -->
+        <a href="#" class="logo-container">
+          <img src="assets/images/logo-arya-teknik.png" alt="Arya Fauzan Teknik Logo" class="logo-img" id="logo-image">
+          <div class="logo-fallback" id="logo-fallback" style="display: none;">
+            AF<br>TEK
+          </div>
+          <div class="logo-text">
+            <div class="logo-main">ARYA FAUZAN TEKNIK</div>
+            <div class="logo-sub">Widia</div>
+          </div>
+        </a>
+
+        <nav class="nav-menu" id="navMenu">
+          <a href="#home" class="nav-link active">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+          </a>
+          <a href="#about" class="nav-link">
+            <i class="fas fa-info-circle"></i>
+            <span>Tentang</span>
+          </a>
+          
+          <a href="#contact" class="nav-link">
+            <i class="fas fa-phone-alt"></i>
+            <span>Kontak</span>
+          </a>
+          
+          <button id="logoutButton" class="logout-button">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </button>
+        </nav>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content (Hidden until login) -->
+  <div id="mainContent" style="display: none;">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-wrapper">
+          <div class="hero-content">
+            <h1>Solusi Teknik & <span>Bor Sumur</span> Terpercaya</h1>
+            <p>Melayani jasa bor sumur dalam, teknik permesinan, dan servis motor profesional dengan teknisi berpengalaman dan peralatan modern.</p>
+            
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Proyek Selesai</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">12+</span>
+                <span class="stat-label">Tahun Pengalaman</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Kepuasan Klien</span>
+              </div>
+            </div>
+            
+            <div class="hero-buttons">
+              <a href="#contact" class="btn-primary">
+                <i class="fas fa-phone-alt"></i>
+                Hubungi Kami
+              </a>
+              <a href="#services" class="btn-secondary">
+                <i class="fas fa-concierge-bell"></i>
+                Lihat Layanan
+              </a>
+            </div>
+          </div>
+          
+          <div class="hero-image">
+            <div class="image-card">
+              <div class="image-card-content">
+                <h3>Pendiri & Direktur Utama</h3>
+                <p>Profesional dengan pengalaman luas di bidang teknik</p>
+                
+                <div class="founder-profile">
+                  <div class="photo"></div>
+                  <img src="assets/images/logo-arya-teknik.png" alt="Arya Fauzan Teknik Logo" class="logo-img" id="logo-image">
+                  <div class="founder-name">Arya Fauzan Permana Putra</div>
+                  <div class="founder-title">Direktur Utama</div>
+                  <div class="founder-qualification">S.T., M.T.</div>
+                  
+                  <div class="founder-details">
+                    <div class="detail-item">
+                      <i class="fas fa-graduation-cap"></i>
+                      <div class="detail-text">
+                        <strong>Pendidikan:</strong> S1 Teknik Mesin, S2 Teknik Industri
+                      </div>
+                    </div>
+                    <div class="detail-item">
+                      <i class="fas fa-briefcase"></i>
+                      <div class="detail-text">
+                        <strong>Pengalaman:</strong> 12+ tahun di bidang teknik dan konstruksi
+                      </div>
+                    </div>
+                    <div class="detail-item">
+                      <i class="fas fa-award"></i>
+                      <div class="detail-text">
+                        <strong>Sertifikasi:</strong> Ahli K3 Umum, Sertifikasi Bor Sumur Nasional
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="hero-buttons" style="justify-content: center; margin-top: 20px;">
+                  <a href="#about" class="btn-secondary" style="padding: 10px 20px;">
+                    <i class="fas fa-user"></i>
+                    Profil Lengkap
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Layanan Unggulan Kami</h2>
+          <p class="section-subtitle">Kami menyediakan berbagai layanan teknik profesional dengan kualitas terjamin dan harga bersaing</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-motorcycle"></i>
+            </div>
+            <h3 id="service-title-1">Servis Motor</h3>
+            <ul class="service-list" id="service-list-1">
+              <li>Servis Ringan & Berat</li>
+              <li>Perbaikan Mesin Komprehensif</li>
+              <li>Tune Up & Modifikasi</li>
+              <li>Perbaikan Kelistrikan</li>
+              <li>Perawatan Rutin</li>
+            </ul>
+            <a href="#servis-motor" class="nav-link" style="display: inline-flex; padding: 8px 16px;">
+              Selengkapnya <i class="fas fa-arrow-right" style="font-size: 0.9rem;"></i>
+            </a>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-water"></i>
+            </div>
+            <h3 id="service-title-2">Bor Sumur</h3>
+            <ul class="service-list" id="service-list-2">
+              <li>Pengeboran Sumur Dalam</li>
+              <li>Sumur Bor Artesis</li>
+              <li>Instalasi Pompa Air</li>
+              <li>Perawatan & Pembersihan</li>
+              <li>Survey Geolistrik</li>
+            </ul>
+            <a href="#jasa-bor" class="nav-link" style="display: inline-flex; padding: 8px 16px;">
+              Selengkapnya <i class="fas fa-arrow-right" style="font-size: 0.9rem;"></i>
+            </a>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, var(--accent-purple), #7c3aed);">
+              <i class="fas fa-hard-hat"></i>
+            </div>
+            <h3 id="service-title-3">Teknik Sipil</h3>
+            <ul class="service-list" id="service-list-3">
+              <li>Konstruksi Bangunan</li>
+              <li>Perencanaan & Desain</li>
+              <li>Infrastruktur Jalan</li>
+              <li>Renovasi & Pembongkaran</li>
+              <li>Analisis Struktur</li>
+            </ul>
+            <a href="#teknik-sipil" class="nav-link" style="display: inline-flex; padding: 8px 16px;">
+              Selengkapnya <i class="fas fa-arrow-right" style="font-size: 0.9rem;"></i>
+            </a>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon" style="background: linear-gradient(135deg, var(--accent), #ea580c);">
+              <i class="fas fa-file-contract"></i>
+            </div>
+            <h3 id="service-title-4">Surat Izin</h3>
+            <ul class="service-list" id="service-list-4">
+              <li>IMB & SLF</li>
+              <li>Perizinan Usaha</li>
+              <li>AMDAL & UKL-UPL</li>
+              <li>Legalitas Perusahaan</li>
+              <li>Konsultasi Perizinan</li>
+            </ul>
+            <a href="#surat-izin" class="nav-link" style="display: inline-flex; padding: 8px 16px;">
+              Selengkapnya <i class="fas fa-arrow-right" style="font-size: 0.9rem;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Mengapa Memilih Kami?</h2>
+          <p class="section-subtitle">Kami berkomitmen memberikan pelayanan terbaik dengan standar kualitas tertinggi</p>
+        </div>
+        
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <h3>Berkualitas</h3>
+            <p>Standar kualitas tertinggi dengan material premium dan teknisi bersertifikat</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Tepat Waktu</h3>
+            <p>Pengerjaan sesuai jadwal dengan monitoring progress secara real-time</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Support 24/7</h3>
+            <p>Layanan darurat tersedia 24 jam untuk kebutuhan mendesak Anda</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Bergaransi</h3>
+            <p>Semua layanan dilengkapi dengan garansi resmi untuk kepuasan Anda</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section with Founder Details -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Tentang Perusahaan & Pendiri</h2>
+          <p class="section-subtitle"><strong>Arya Fauzan Teknik Widia</strong> didirikan oleh profesional berpengalaman dengan visi menjadi perusahaan teknik terdepan</p>
+        </div>
+       <div class="hero-wrapper" style="gap: 60px; align-items: flex-start;">
+  <div class="hero-content">
+    <h3 style="font-size: 2rem; margin-bottom: 25px; color: var(--primary); position: relative; padding-bottom: 15px; font-family: 'Poppins', sans-serif;">
+      <span style="background: linear-gradient(135deg, var(--secondary), #1d4ed8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Profil Pendiri</span>
+      <span style="display: block; width: 60px; height: 4px; background: linear-gradient(135deg, var(--secondary), var(--accent)); margin-top: 10px; border-radius: 2px;"></span>
+    </h3>
+      <!-- Decorative Elements -->
+      <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0) 100%); border-radius: 0 20px 0 100px;"></div>
+      
+      <!-- Founder Header with Photo -->
+      <div style="display: flex; align-items: center; gap: 25px; margin-bottom: 30px; position: relative;">
+        <!-- Founder Photo Container -->
+        <div style="position: relative;">
+            </div>
+            <!-- Optional: You can replace the above with an actual image -->
+            <!-- <img src="assets/images/founder-photo.jpg" alt="Arya Fauzan Permana Putra" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"> -->
+          </div>
+          </div>
+        </div>
+        
+        <!-- Founder Info -->
+        <div style="flex: 1;">
+          <h4 style="font-size: 1.6rem; margin-bottom: 8px; color: var(--primary); font-family: 'Poppins', sans-serif; font-weight: 700;">
+            Arya Fauzan Permana Putra
+          </h4>
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px; flex-wrap: wrap;">
+            <span style="background: linear-gradient(135deg, var(--secondary), #1d4ed8); color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+              <i class="fas fa-crown" style="font-size: 0.8rem;"></i>
+              Direktur Utama
+            </span>
+            <span style="color: var(--gray); font-size: 0.95rem; font-weight: 500; display: flex; align-items: center; gap: 5px;">
+              <i class="fas fa-graduation-cap"></i>
+              S.T., M.T.
+            </span>
+          </div>
+          <p style="color: var(--gray); font-size: 0.95rem; line-height: 1.6;">
+            Profesional dengan pengalaman luas di bidang teknik mesin, bor sumur, dan konstruksi. 
+            Berpengalaman memimpin lebih dari 500+ proyek dengan tingkat keberhasilan tinggi.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Founder Details Grid -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 30px;">
+        
+        <!-- Education Card -->
+        <div style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); border-left: 4px solid var(--secondary);">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--secondary);">
+              <i class="fas fa-university"></i>
+            </div>
+            <h5 style="font-size: 1rem; color: var(--primary); font-weight: 700; margin: 0;">PENDIDIKAN</h5>
+          </div>
+          <ul style="list-style: none; padding-left: 0; margin: 0;">
+            <li style="margin-bottom: 12px; font-size: 0.95rem; color: var(--dark); display: flex; align-items: flex-start; gap: 10px;">
+              <div style="color: var(--secondary); font-size: 0.8rem; margin-top: 2px;">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <span><strong>S1 Teknik Mesin</strong> - Universitas Terkemuka</span>
+            </li>
+            <li style="margin-bottom: 12px; font-size: 0.95rem; color: var(--dark); display: flex; align-items: flex-start; gap: 10px;">
+              <div style="color: var(--secondary); font-size: 0.8rem; margin-top: 2px;">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <span><strong>S2 Teknik Industri</strong> - Universitas Terkemuka</span>
+            </li>
+            <li style="font-size: 0.95rem; color: var(--dark); display: flex; align-items: flex-start; gap: 10px;">
+              <div style="color: var(--secondary); font-size: 0.8rem; margin-top: 2px;">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <span><strong>Program Profesi Insinyur</strong> - PII</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Certifications Card -->
+        <div style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); border-left: 4px solid var(--accent);">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent);">
+              <i class="fas fa-award"></i>
+            </div>
+            <h5 style="font-size: 1rem; color: var(--primary); font-weight: 700; margin: 0;">SERTIFIKASI</h5>
+          </div>
+          <ul style="list-style: none; padding-left: 0; margin: 0;">
+            <li style="margin-bottom: 12px; font-size: 0.95rem; color: var(--dark); display: flex; align-items: flex-start; gap: 10px;">
+              <div style="color: var(--accent); font-size: 0.8rem; margin-top: 2px;">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <span><strong>Ahli K3 Umum</strong> - Kemnaker RI</span>
+            </li>
+            <li style="margin-bottom: 12px; font-size: 0.95rem; color: var(--dark); display: flex; align-items: flex-start; gap: 10px;">
+              <div style="color: var(--accent); font-size: 0.8rem; margin-top: 2px;">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <span><strong>Sertifikasi Bor Sumur</strong> - Nasional</span>
+            </li>
+            <li style="font-size: 0.95rem; color: var(--dark); display: flex; align-items: flex-start; gap: 10px;">
+              <div style="color: var(--accent); font-size: 0.8rem; margin-top: 2px;">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <span><strong>Welding Inspector</strong> - AWS Certified</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Experience Section -->
+      <div style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); border-left: 4px solid var(--accent-purple);">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+          <div style="width: 40px; height: 40px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent-purple);">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h5 style="font-size: 1rem; color: var(--primary); font-weight: 700; margin: 0;">PENGALAMAN PROFESIONAL</h5>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <!-- Experience 1 -->
+          <div style="display: flex; gap: 15px; padding-bottom: 20px; border-bottom: 1px solid var(--border);">
+            <div style="min-width: 60px; text-align: center;">
+              <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--accent-purple), #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin: 0 auto 8px; font-size: 1.2rem;">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <div style="font-size: 0.75rem; color: var(--gray); font-weight: 600;">12+ tahun</div>
+            </div>
+            <div>
+              <h6 style="font-size: 1rem; color: var(--primary); margin-bottom: 8px; font-weight: 600;">Kepala Teknik & Konsultan</h6>
+              <p style="font-size: 0.95rem; color: var(--gray); line-height: 1.6; margin-bottom: 0;">
+                Memimpin tim teknis dalam proyek bor sumur dalam, konstruksi sipil, dan teknik mesin. 
+                Mengembangkan sistem dan metode kerja yang efisien untuk meningkatkan produktivitas.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Experience 2 -->
+          <div style="display: flex; gap: 15px;">
+            <div style="min-width: 60px; text-align: center;">
+              <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--accent-green), #10b981); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin: 0 auto 8px; font-size: 1.2rem;">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div style="font-size: 0.75rem; color: var(--gray); font-weight: 600;">500+ proyek</div>
+            </div>
+            <div>
+              <h6 style="font-size: 1rem; color: var(--primary); margin-bottom: 8px; font-weight: 600;">Manajemen Proyek</h6>
+              <p style="font-size: 0.95rem; color: var(--gray); line-height: 1.6; margin-bottom: 0;">
+                Berhasil menyelesaikan lebih dari 500 proyek dengan tingkat kepuasan klien mencapai 98%. 
+                Spesialis dalam perancangan mesin bor custom dan solusi teknik terintegrasi untuk berbagai industri.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Button -->
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="#contact" class="btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 30px; font-size: 1rem;">
+          <i class="fas fa-comments"></i>
+          Konsultasi dengan Pendiri
+        </a>
+      </div>
+    </div>
+  </div>
+          
+          <div class="hero-image">
+            <div class="image-card">
+              <div class="image-card-content">
+                <h3>Visi & Misi Perusahaan</h3>
+                <p style="margin-bottom: 20px;">Menjadi perusahaan teknik terdepan dengan pelayanan terbaik</p>
+                
+                <div style="text-align: left;">
+                  <h4 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--primary);">Visi</h4>
+                  <p style="margin-bottom: 20px; font-size: 0.95rem; color: var(--dark);">
+                    Menjadi perusahaan teknik terkemuka di Indonesia yang memberikan solusi inovatif, 
+                    berkualitas tinggi, dan berkelanjutan dalam bidang bor sumur, teknik mesin, dan konstruksi.
+                  </p>
+                  
+                  <h4 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--primary);">Misi</h4>
+                  <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; align-items: flex-start; gap: 12px;">
+                      <div style="width: 8px; height: 8px; background: var(--secondary); border-radius: 50%; margin-top: 6px; flex-shrink: 0;"></div>
+                      <span style="font-weight: 500; font-size: 0.95rem;">Menyediakan layanan teknik berkualitas tinggi dengan standar internasional</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 12px;">
+                      <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; margin-top: 6px; flex-shrink: 0;"></div>
+                      <span style="font-weight: 500; font-size: 0.95rem;">Mengembangkan teknologi dan metode kerja yang inovatif dan efisien</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 12px;">
+                      <div style="width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%; margin-top: 6px; flex-shrink: 0;"></div>
+                      <span style="font-weight: 500; font-size: 0.95rem;">Membina hubungan jangka panjang dengan klien berdasarkan kepercayaan dan profesionalisme</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">Siap Mengerjakan Proyek Anda</h2>
+      <p class="cta-description">Hubungi kami sekarang untuk konsultasi gratis dan penawaran terbaik untuk kebutuhan teknik Anda</p>
+      
+      <div class="cta-buttons">
+        <a href="mailto:aryapermana@gmail.com" 
+           class="btn-email" 
+           style="display: inline-flex; align-items: center; gap: 12px; text-decoration: none;">
+          <div class="email-icon" style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+            <i class="fas fa-envelope" style="font-size: 1.3rem; color: var(--primary);"></i>
+          </div>
+          <div style="text-align: left;">
+            <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9);">Kirim Email ke</div>
+            <div style="font-size: 1.1rem; font-weight: 700; color: white;">aryapermana@gmail.com</div>
+          </div>
+          <i class="fas fa-arrow-right" style="color: white; font-size: 1rem; margin-left: 10px;"></i>
+        </a>
+        
+        <a href="#about" class="btn-about" style="display: inline-flex; align-items: center; gap: 12px; text-decoration: none;">
+          <div class="about-icon" style="width: 50px; height: 50px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white;">
+            <i class="fas fa-info-circle" style="font-size: 1.3rem; color: white;"></i>
+          </div>
+          <div style="text-align: left;">
+            <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9);">Pelajari lebih lanjut</div>
+            <div style="font-size: 1.1rem; font-weight: 700; color: white;">Tentang Kami</div>
+          </div>
+          <i class="fas fa-arrow-right" style="color: white; font-size: 1rem; margin-left: 10px;"></i>
+        </a>
+      </div>
+      
+      <!-- Additional Contact Options -->
+      <div class="contact-options" style="margin-top: 40px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="tel:+6281234567890" style="display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.9); text-decoration: none; padding: 10px 20px; background: rgba(255, 255, 255, 0.1); border-radius: 25px; transition: all 0.3s;">
+          <i class="fas fa-phone-alt"></i>
+          <span>Telepon: +62 812-3456-7890</span>
+        </a>
+        <a href="https://wa.me/6281234567890" style="display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.9); text-decoration: none; padding: 10px 20px; background: rgba(255, 255, 255, 0.1); border-radius: 25px; transition: all 0.3s;">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Company Info -->
+      <div class="footer-col">
+        <div class="footer-logo" style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+          <div style="width: 50px; height: 50px;border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'Poppins', sans-serif; font-weight: 800; color: white; font-size: 1.2rem;">
+          </div>
+          <div>
+            <h3 style="font-size: 1.3rem; font-weight: 800; color: white; margin-bottom: 5px;">ARYA FAUZAN TEKNIK</h3>
+            <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">Widia - Solusi Teknik Profesional</p>
+          </div>
+        </div>
+        <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.7; margin-bottom: 25px; font-size: 0.95rem;">
+          Perusahaan terpercaya dalam bidang jasa teknik, bor sumur, dan servis motor dengan pengalaman lebih dari 12 tahun dan 500+ proyek berhasil.
+        </p>
+        
+        <!-- Social Media -->
+        <div class="social-section">
+          <h4 style="font-size: 1rem; color: white; margin-bottom: 15px; font-weight: 600;">Ikuti Kami</h4>
+          <div class="social-links">
+            <a href="#" class="social-link" style="background: #1877F2;">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" style="background: #E4405F;">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" style="background: #FF0000;">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="social-link" style="background: #0A66C2;">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Services -->
+      <div class="footer-col">
+        <h3 style="font-size: 1.1rem; color: white; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgba(255, 255, 255, 0.1);">Layanan Kami</h3>
+        <div class="footer-links">
+          <a href="#servis-motor" class="footer-link">
+            <i class="fas fa-motorcycle" style="color: var(--secondary);"></i>
+            <span>Servis Motor Lengkap</span>
+          </a>
+          <a href="#jasa-bor" class="footer-link">
+            <i class="fas fa-water" style="color: var(--secondary);"></i>
+            <span>Bor Sumur Dalam</span>
+          </a>
+          <a href="#teknik-sipil" class="footer-link">
+            <i class="fas fa-hard-hat" style="color: var(--secondary);"></i>
+            <span>Teknik Sipil</span>
+          </a>
+          <a href="#surat-izin" class="footer-link">
+            <i class="fas fa-file-contract" style="color: var(--secondary);"></i>
+            <span>Perizinan & Legalitas</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h3 style="font-size: 1.1rem; color: white; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgba(255, 255, 255, 0.1);">Kontak Kami</h3>
+        <div class="contact-info">
+          <div class="contact-item" style="display: flex; gap: 15px; margin-bottom: 20px;">
+            <div style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-envelope" style="color: var(--secondary);"></i>
+            </div>
+            <div>
+              <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 5px;">Email</div>
+              <a href="mailto:aryapermana@gmail.com" style="color: white; font-weight: 600; text-decoration: none;">aryapermana@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-item" style="display: flex; gap: 15px; margin-bottom: 20px;">
+            <div style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-phone-alt" style="color: var(--accent-green);"></i>
+            </div>
+            <div>
+              <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 5px;">Telepon</div>
+              <a href="tel:+6281234567890" style="color: white; font-weight: 600; text-decoration: none;">+62 812-3456-7890</a>
+            </div>
+          </div>
+          
+          <div class="contact-item" style="display: flex; gap: 15px;">
+            <div style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-clock" style="color: var(--accent);"></i>
+            </div>
+            <div>
+              <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 5px;">Jam Operasional</div>
+              <div style="color: white; font-weight: 600;">Senin - Minggu: 08.00 - 16.00 WIB</div>
+              <div style="font-size: 0.85rem; color: var(--accent-green); font-weight: 500; margin-top: 5px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3 style="font-size: 1.1rem; color: white; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgba(255, 255, 255, 0.1);">Tautan Cepat</h3>
+        <div class="footer-links">
+          <a href="#home" class="footer-link">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+          </a>
+          <a href="#services" class="footer-link">
+            <i class="fas fa-concierge-bell"></i>
+            <span>Layanan</span>
+          </a>
+          <a href="#about" class="footer-link">
+            <i class="fas fa-info-circle"></i>
+            <span>Tentang Kami</span>
+          </a>
+          <a href="#contact" class="footer-link">
+            <i class="fas fa-phone-alt"></i>
+            <span>Kontak</span>
+          </a>
+          <a href="dashboard.html" class="footer-link">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </div>
+        
+        <!-- Logout Button -->
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+          <button id="footerLogoutButton" class="logout-button" style="width: 100%; padding: 12px; border-radius: 8px; background: linear-gradient(135deg, #ef4444, #dc2626); color: white; border: none; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; transition: all 0.3s;">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout dari Dashboard
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">
+          &copy; 2026 <strong style="color: white;">Arya Fauzan Teknik Widia</strong>. Semua hak dilindungi.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.3s;">Syarat & Ketentuan</a>
+          <a href="#" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.3s;">Kebijakan Privasi</a>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <p style="color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; margin-bottom: 5px;">
+          Didirikan dan dipimpin oleh:
+        </p>
+        <p style="color: white; font-weight: 600; font-size: 1rem;">
+          Arya Fauzan Permana Putra, S.T., M.T.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- UPDATE SCRIPT SECTION -->
+  <script>
+    // ========== API CONFIGURATION ==========
+    const API_BASE_URL = 'http://localhost:5000/api';
+    
+    // ========== LOGIN SYSTEM ==========
+    const loginOverlay = document.getElementById('loginOverlay');
+    const mainHeader = document.getElementById('mainHeader');
+    const mainContent = document.getElementById('mainContent');
+    const loginButton = document.getElementById('loginButton');
+    const logoutButton = document.getElementById('logoutButton');
+    const footerLogoutButton = document.getElementById('footerLogoutButton');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+
+    // Check auth status on page load
+    document.addEventListener('DOMContentLoaded', async () => {
+        console.log('Page loaded, checking auth status...');
+        await checkAuthStatus();
+        
+        // Auto-focus username input
+        if (usernameInput) {
+            usernameInput.focus();
+        }
+        
+        // Enter key to submit login
+        if (passwordInput) {
+            passwordInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    loginButton.click();
+                }
+            });
+        }
+        
+        // Add test connection button
+        setTimeout(addTestConnectionButton, 500);
+    });
+
+    // Check authentication status
+    async function checkAuthStatus() {
+        try {
+            console.log('Checking auth status...');
+            const response = await fetch(`${API_BASE_URL}/auth/check`, {
+                credentials: 'include'
+            });
+            
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Auth check response:', data);
+                if (data.authenticated) {
+                    console.log('User already authenticated:', data.user);
+                    showMainContent();
+                    return true;
+                }
+            } else {
+                console.log('Not authenticated');
+            }
+            return false;
+        } catch (error) {
+            console.log('Not authenticated or server not reachable:', error.message);
+            return false;
+        }
+    }
+
+    // Login function
+    loginButton.addEventListener('click', async function() {
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value;
+        
+        if (!username || !password) {
+            showLoginMessage('Username dan password harus diisi!', 'error');
+            return;
+        }
+        
+        // Show loading
+        loginButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+        loginButton.disabled = true;
+        
+        try {
+            console.log('Attempting login for:', username);
+            const response = await fetch(`${API_BASE_URL}/auth/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify({ username, password })
+            });
+            
+            const data = await response.json();
+            console.log('Login response:', data);
+            
+            if (data.success) {
+                showLoginMessage('Login berhasil! Mengalihkan...', 'success');
+                setTimeout(() => {
+                    showMainContent();
+                }, 1000);
+            } else {
+                showLoginMessage(data.message || 'Login gagal!', 'error');
+                resetLoginButton();
+            }
+        } catch (error) {
+            console.error('Login error:', error);
+            showLoginMessage('Tidak dapat terhubung ke server. Pastikan backend berjalan di port 5000!', 'error');
+            resetLoginButton();
+        }
+    });
+
+    // Show login message
+    function showLoginMessage(message, type) {
+        // Remove existing message
+        const existingMessage = document.querySelector('.login-message-dynamic');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Create new message
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `login-message-dynamic ${type}`;
+        messageDiv.style.marginTop = '15px';
+        messageDiv.style.padding = '10px';
+        messageDiv.style.borderRadius = '5px';
+        messageDiv.style.fontSize = '0.9rem';
+        messageDiv.style.textAlign = 'center';
+        
+        if (type === 'success') {
+            messageDiv.style.background = '#d1fae5';
+            messageDiv.style.color = '#065f46';
+            messageDiv.style.border = '1px solid #a7f3d0';
+        } else {
+            messageDiv.style.background = '#fee2e2';
+            messageDiv.style.color = '#991b1b';
+            messageDiv.style.border = '1px solid #fecaca';
+        }
+        
+        messageDiv.textContent = message;
+        
+        const loginBox = document.querySelector('.login-box');
+        if (loginBox) {
+            loginBox.appendChild(messageDiv);
+        }
+    }
+
+    // Reset login button
+    function resetLoginButton() {
+        loginButton.innerHTML = '<i class="fas fa-sign-in-alt"></i> Login';
+        loginButton.disabled = false;
+    }
+
+    // Logout function
+    async function logout() {
+        try {
+            await fetch(`${API_BASE_URL}/auth/logout`, {
+                method: 'POST',
+                credentials: 'include'
+            });
+            
+            localStorage.removeItem('isLoggedIn');
+            location.reload();
+        } catch (error) {
+            console.error('Logout error:', error);
+            localStorage.removeItem('isLoggedIn');
+            location.reload();
+        }
+    }
+
+    if (logoutButton) {
+        logoutButton.addEventListener('click', logout);
+    }
+    
+    if (footerLogoutButton) {
+        footerLogoutButton.addEventListener('click', logout);
+    }
+
+    // Show main content after login
+    function showMainContent() {
+        console.log('Showing main content...');
+        if (loginOverlay) loginOverlay.style.display = 'none';
+        if (mainHeader) mainHeader.style.display = 'block';
+        if (mainContent) mainContent.style.display = 'block';
+        
+        // Initialize navigation
+        if (typeof initNavigation === 'function') {
+            initNavigation();
+        }
+        
+        // Load real data from backend
+        loadServicesFromBackend();
+        updateUserProfile();
+        updateDashboardLink();
+    }
+
+    // Load services from backend
+    async function loadServicesFromBackend() {
+        try {
+            console.log('Loading services from backend...');
+            const response = await fetch(`${API_BASE_URL}/services`);
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Services loaded from backend:', data.data);
+                updateServicesDisplay(data.data);
+            } else {
+                console.error('Failed to load services:', response.status);
+            }
+        } catch (error) {
+            console.error('Failed to load services:', error);
+            // Fallback to mock data if backend is not available
+            updateServicesDisplayWithFallback();
+        }
+    }
+
+    // Update services display with real data
+    function updateServicesDisplay(services) {
+        console.log('Updating services display with', services.length, 'services');
+        
+        // Update service cards
+        services.forEach((service, index) => {
+            const cardIndex = index % 4; // We have 4 service cards
+            const titleElement = document.getElementById(`service-title-${cardIndex + 1}`);
+            const listElement = document.getElementById(`service-list-${cardIndex + 1}`);
+            
+            if (titleElement && listElement) {
+                titleElement.textContent = service.name;
+                
+                // Update service list with real data
+                listElement.innerHTML = `
+                    <li><strong>Harga:</strong> Rp ${service.price.toLocaleString('id-ID')}</li>
+                    <li><strong>Durasi:</strong> ${service.duration_days} hari</li>
+                    <li><strong>Status:</strong> ${service.is_available ? '✅ Tersedia' : '⛔ Tidak Tersedia'}</li>
+                    <li><strong>Kategori:</strong> ${getCategoryLabel(service.category)}</li>
+                    ${service.description ? `<li><strong>Deskripsi:</strong> ${service.description.substring(0, 80)}...</li>` : ''}
+                `;
+            }
+        });
+        
+        // Update stats if available
+        updateStats(services);
+    }
+
+    // Fallback function if backend fails
+    function updateServicesDisplayWithFallback() {
+        console.log('Using fallback service data');
+        const fallbackServices = [
+            { name: 'Servis Motor Premium', price: 200000, duration_days: 1, is_available: true, category: 'motor', description: 'Servis motor lengkap dengan sparepart original' },
+            { name: 'Bor Sumur Artesis', price: 10000000, duration_days: 5, is_available: true, category: 'bor', description: 'Pengeboran sumur artesis dengan teknologi modern' },
+            { name: 'Konstruksi Gedung', price: 500000000, duration_days: 90, is_available: true, category: 'sipil', description: 'Konstruksi gedung bertingkat dengan standar SNI' },
+            { name: 'Pengurusan IMB', price: 3000000, duration_days: 14, is_available: true, category: 'izin', description: 'Pengurusan IMB lengkap untuk bangunan komersial' }
+        ];
+        
+        updateServicesDisplay(fallbackServices);
+    }
+
+    // Update stats with service data
+    function updateStats(services) {
+        const totalServices = services.length;
+        const availableServices = services.filter(s => s.is_available).length;
+        const totalValue = services.reduce((sum, service) => sum + service.price, 0);
+        
+        // Update stat numbers in hero section
+        const statNumbers = document.querySelectorAll('.stat-number');
+        if (statNumbers.length >= 3) {
+            statNumbers[0].textContent = `${totalServices}+`;
+            statNumbers[1].textContent = '12+'; // Years experience - static
+            statNumbers[2].textContent = '98%'; // Client satisfaction - static
+        }
+        
+        console.log('Stats updated:', { totalServices, availableServices, totalValue });
+    }
+
+    // Get category label in Indonesian
+    function getCategoryLabel(category) {
+        const categories = {
+            'motor': 'Servis Motor',
+            'bor': 'Bor Sumur',
+            'sipil': 'Teknik Sipil',
+            'izin': 'Surat Izin'
+        };
+        return categories[category] || category;
+    }
+
+    // Update user profile information
+    async function updateUserProfile() {
+        try {
+            const response = await fetch(`${API_BASE_URL}/auth/check`, {
+                credentials: 'include'
+            });
+            
+            if (response.ok) {
+                const data = await response.json();
+                if (data.user) {
+                    console.log('Updating user profile with:', data.user);
+                    // Update user info in profile section if exists
+                    const profileName = document.querySelector('.founder-name');
+                    if (profileName && data.user.name) {
+                        profileName.textContent = data.user.name;
+                    }
+                    
+                    // Update email in contact section
+                    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+                    emailLinks.forEach(link => {
+                        if (link.textContent.includes('@') && data.user.email) {
+                            link.href = `mailto:${data.user.email}`;
+                            link.textContent = data.user.email;
+                        }
+                    });
+                }
+            }
+        } catch (error) {
+            console.error('Failed to update user profile:', error);
+        }
+    }
+
+    // Update dashboard link based on user role
+    function updateDashboardLink() {
+        const dashboardLink = document.querySelector('a[href="dashboard.html"]');
+        if (dashboardLink) {
+            dashboardLink.style.display = 'inline-flex';
+            dashboardLink.innerHTML = '<i class="fas fa-tachometer-alt"></i> Dashboard Admin';
+        }
+    }
+
+    // ========== TEST CONNECTION BUTTON ==========
+    function addTestConnectionButton() {
+        const loginBox = document.querySelector('.login-box');
+        if (loginBox) {
+            // Remove existing test button if any
+            const existingTestButton = document.getElementById('testConnectionButton');
+            if (existingTestButton) {
+                existingTestButton.remove();
+            }
+            
+            const testButton = document.createElement('button');
+            testButton.id = 'testConnectionButton';
+            testButton.innerHTML = '<i class="fas fa-wifi"></i> Test Koneksi Server';
+            testButton.style.marginTop = '10px';
+            testButton.style.padding = '8px 16px';
+            testButton.style.background = '#f3f4f6';
+            testButton.style.color = '#4b5563';
+            testButton.style.border = '1px solid #d1d5db';
+            testButton.style.borderRadius = '5px';
+            testButton.style.cursor = 'pointer';
+            testButton.style.width = '100%';
+            testButton.style.fontSize = '0.9rem';
+            
+            testButton.addEventListener('click', async () => {
+                testButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Testing...';
+                testButton.disabled = true;
+                
+                try {
+                    const response = await fetch(`${API_BASE_URL}/health`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        showLoginMessage(`✅ ${data.message} (Mode: ${data.mode})`, 'success');
+                    } else {
+                        showLoginMessage('⚠️ Server tidak merespon dengan benar', 'error');
+                    }
+                } catch (error) {
+                    showLoginMessage('❌ Tidak dapat terhubung ke server. Pastikan backend berjalan!', 'error');
+                } finally {
+                    setTimeout(() => {
+                        testButton.innerHTML = '<i class="fas fa-wifi"></i> Test Koneksi Server';
+                        testButton.disabled = false;
+                    }, 2000);
+                }
+            });
+            
+            const loginMessage = document.querySelector('.login-message');
+            if (loginMessage) {
+                loginBox.insertBefore(testButton, loginMessage);
+            } else {
+                loginBox.appendChild(testButton);
+            }
+        }
+    }
+
+    // ========== EXISTING NAVIGATION CODE ==========
+    function initNavigation() {
+        console.log('Initializing navigation...');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (mobileMenuBtn && navMenu) {
+            // Mobile Menu Toggle
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Highlight active nav link on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if(pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Add scroll effect to header
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
+            });
+        }
+    }
+
+    // Check if logo image loads successfully
+    window.addEventListener('load', function() {
+        const logoImg = document.getElementById('logo-image');
+        const logoFallback = document.getElementById('logo-fallback');
+        
+        if (logoImg) {
+            logoImg.onerror = function() {
+                // If image fails to load, show fallback
+                logoImg.style.display = 'none';
+                if (logoFallback) {
+                    logoFallback.style.display = 'flex';
+                }
+            };
+        }
+    });
+  </script>
+</body>
+</html>
